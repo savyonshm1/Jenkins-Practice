@@ -10,7 +10,9 @@ pipeline{
             steps{
                 sh 'echo ===== build stage ====='
                 sh 'echo some-text > app.txt'
-                // sh 'printenv'
+                echo 'the app is name: ${APP_NAME}'
+                echo 'the app version is: ${APP_VERSION}'
+                echo 'the docker repo is: ${DOCKER_REPO}'
             }
         }
         stage("test"){
@@ -23,8 +25,8 @@ pipeline{
                             echo "The file does not exist."
                         fi
                 '''        
-                // sh 'the pipeline name is ${JOB_BASE_NAME}' 
-                // sh 'the pipeline name is ${env.BUILD_NUMBER}'
+                sh 'echo the pipeline name is ${JOB_BASE_NAME}' 
+                sh 'echo build number is ${env.BUILD_NUMBER}'
             }
         }
         stage("deploy"){
