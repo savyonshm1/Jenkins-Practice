@@ -1,17 +1,17 @@
 pipeline{
     agent any
     stages{
-        stage("clone the code"){
+        stage("build"){
             steps{
                 sh 'echo ===== build stage ====='
             }
         }
-        stage("build the code"){
+        stage("test"){
             steps{
                 sh 'echo ===== test stage ====='
             }
         }
-        stage("test the code"){
+        stage("deploy"){
             steps{
                 sh 'echo ===== deploy stage =====' 
             }
