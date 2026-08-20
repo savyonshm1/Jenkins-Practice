@@ -23,8 +23,8 @@ pipeline{
                             echo "The file does not exist."
                         fi
                 '''        
-                sh 'the pipeline name is ${JOB_BASE_NAME}' 
-                sh 'the pipeline name is ${env.BUILD_NUMBER}'
+                // sh 'the pipeline name is ${JOB_BASE_NAME}' 
+                // sh 'the pipeline name is ${env.BUILD_NUMBER}'
             }
         }
         stage("deploy"){
